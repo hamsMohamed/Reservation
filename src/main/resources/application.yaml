@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/reservation}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:123}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+#      ddl-auto: update          # update = ????/???? ??????? ????????
+      ddl-auto: create-drop
+    show-sql: true              # ???? ??? SQL ?? ??? console (???? ???????)
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+auth:
+  secret: ${AUTH_SECRET:global-sec-key}
+#auth.access.expiration=1800
+  access:
+    expiration: 180000
+  refresh:
+    expiration: 1800000
