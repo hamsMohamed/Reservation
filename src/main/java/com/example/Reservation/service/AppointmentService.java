@@ -163,6 +163,8 @@ public class AppointmentService {
         newApp.setDateTime(slot);
         newApp.setClientName(request.getClientName());
         newApp.setServiceType(request.getServiceType());
+        newApp.setEmail(request.getEmail());
+        newApp.setPhone(request.getPhone());
         newApp.setBooked(true);
          appointmentRepository.save(newApp);
 

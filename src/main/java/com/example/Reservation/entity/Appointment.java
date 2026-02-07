@@ -21,5 +21,9 @@ public class Appointment  {
     private boolean booked = false;
     private String clientName;
 
+    private String email;
+    private String phone;
+
+
     private ServiceType serviceType;
 }
