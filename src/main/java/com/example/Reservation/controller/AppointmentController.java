@@ -34,5 +34,6 @@ public class AppointmentController {
     public ResponseEntity<?> book(@Valid @RequestBody AppointmentDto request) {
 
         return  appointmentService.bookSlot(request);
+
     }
 }

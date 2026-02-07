@@ -10,11 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -167,8 +165,17 @@ public class AppointmentService {
         newApp.setServiceType(request.getServiceType());
         newApp.setBooked(true);
          appointmentRepository.save(newApp);
-        return ResponseEntity.ok("reserved sucessfuly");
+
+
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "reserved successfully");
+        response.put("status", "success");
+
+        return ResponseEntity.ok(response);
     }
+
+
 
     // ... باقي الmethods زي عرض للأدمن أو المتخصص
 
